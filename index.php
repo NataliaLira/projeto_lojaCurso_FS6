@@ -1,15 +1,3 @@
-<?php
-    $nomeSistema = "Cursos Online";
-    $usuario = ["nome"=>"Nati"];
-
-    $produtos= [
-        ["nome"=>"FullStack", "preco"=>"R$ 1.200,00", "duracao"=>"5 meses", "imagem"=>"img/fullstack.jpg"],
-        ["nome"=>"Marketing Digital", "preco"=>"R$ 1.000,00", "duracao"=>"4 meses", "imagem"=>"img/mkDigital.jpg"], 
-    ];
-
-    $categorias = ["Cursos", "Palestras", "Artigos","Workshop"];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,51 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="d-flex justify-content-between align-items-center p-3">
-        <div id="logo">
-        <h1><?php echo $nomeSistema;?></h1>
-        </div>  
-
-        <nav>
-            <ul class="nav">
-
-            <?php if (isset($usuario) && $usuario!= []) { ?> 
-                <li class= "nav-item">
-                    <a class="nav-link" href="#">Curso</a>
-                </li>
-                <li class= "nav-item">
-                    <a class="nav-link" href="#">Olá <?php echo $usuario['nome'] ?> </a>
-                </li>
-
-            <?php }else { ?>
-                
-                <li class= "nav-item">
-                    <a class="nav-link" href="#">Log In</a>
-                </li>
-                <li class= "nav-item">
-                    <a class="nav-link" href="#">Cadastrar</a>
-                </li>
-            <?php } ?>
-
-            </ul>
-        </nav>
-    </header>
-
+    
+    <?php require_once("header.php") ?>
     <main>
-
-    <div>
-        <nav class= "bg-dark">
-            <ul class= "nav d-flex justify-content-between p-3">
-
-            <?php foreach($categorias as $categoria){ ?>
-                <li class= "nav-item">
-                    <a class="nav-link text-white" href="#"><?php echo $categoria; ?></a>
-                </li>
-            <?php } ?>    
-     
-            </ul>
-        </nav>
-    </div> 
 
         <section class="container mt-4">
             <div class="row justify-content-between">
